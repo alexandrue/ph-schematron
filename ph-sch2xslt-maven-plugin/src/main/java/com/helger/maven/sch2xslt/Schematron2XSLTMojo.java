@@ -22,6 +22,10 @@ import java.util.Locale;
 import javax.annotation.Nonnull;
 import javax.xml.transform.ErrorListener;
 
+import com.helger.commons.xml.CXML;
+import com.helger.commons.xml.namespace.MapBasedNamespaceContext;
+import com.helger.commons.xml.serialize.write.XMLWriterSettings;
+import com.helger.schematron.svrl.CSVRL;
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugin.MojoFailureException;
@@ -41,6 +45,8 @@ import com.helger.schematron.xslt.SCHTransformerCustomizer;
 import com.helger.schematron.xslt.SchematronResourceSCHCache;
 
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
+import org.w3c.dom.NamedNodeMap;
+import org.w3c.dom.Node;
 
 /**
  * Converts one or more Schematron schema files into XSLT scripts.
@@ -272,8 +278,27 @@ public final class Schematron2XSLTMojo extends AbstractMojo
                                                                                                                                                        .setLanguageCode (languageCode));
             if (aXsltProvider != null)
             {
+              // Add namespace prefixes
+              final MapBasedNamespaceContext aNSContext = new MapBasedNamespaceContext();
+              aNSContext.addMapping("svrl", CSVRL.SVRL_NAMESPACE_URI);
+              final String sNSPrefix = CXML.XML_ATTR_XMLNS + ":";
+
+              NamedNodeMap attributesMap = aXsltProvider.getXSLTDocument().getDocumentElement().getAttributes();
+              for (int i = 0; i < attributesMap.getLength(); i++) {
+                Node item = attributesMap.item(i);
+                String nodeName = item.getNodeName();
+                String nodeValue = item.getNodeValue();
+
+                if (nodeName.startsWith(sNSPrefix))
+                  aNSContext.addMapping(nodeName.substring(sNSPrefix.length()), nodeValue);
+              }
+
+              final XMLWriterSettings xmlWriterSettings = new XMLWriterSettings();
+              xmlWriterSettings.setNamespaceContext(aNSContext);
+              xmlWriterSettings.setPutNamespaceContextPrefixesInRoot(true);
+
               // Write the resulting XSLT file to disk
-              XMLWriter.writeToStream (aXsltProvider.getXSLTDocument (), FileHelper.getOutputStream (aXSLTFile));
+              XMLWriter.writeToStream (aXsltProvider.getXSLTDocument (), FileHelper.getOutputStream (aXSLTFile), xmlWriterSettings);
             }
             else
             {
