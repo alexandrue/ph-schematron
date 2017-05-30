@@ -17,114 +17,114 @@
     limitations under the License.
 
 -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <groupId>com.helger</groupId>
-    <artifactId>ph-schematron-parent-pom</artifactId>
-    <version>3.0.1</version>
-  </parent>
-  <groupId>it.techgap</groupId>
-  <artifactId>ph-sch2xslt-maven-plugin</artifactId>
-  <version>3.0.2</version>
-  <packaging>maven-plugin</packaging>
-  <name>ph-sch2xslt-maven-plugin</name>
-  <description>Maven plugin to convert Schematron files to XSLT files at build time</description>
-  <url>https://github.com/alexandrue/ph-schematron/tree/3.0.2-jdk7/ph-sch2xslt-maven-plugin</url>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
 
-  <licenses>
-    <license>
-      <name>The Apache Software License, Version 2.0</name>
-      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-    </license>
-  </licenses>
-
-  <developers>
-    <developer>
-      <name>Philip Helger</name>
-      <email>ph(at)helger.com</email>
-      <organization>Philip Helger</organization>
-      <organizationUrl>http://www.helger.com</organizationUrl>
-    </developer>
-    <developer>
-      <name>Alexandru Enasoae</name>
-      <email>a.enasoae(at)tehgapsolutions.com</email>
-      <organization>TechGap Italia</organization>
-      <organizationUrl>http://www.techgap.it</organizationUrl>
-    </developer>
-  </developers>
-
-  <scm>
-    <connection>scm:git:git://github.com/alexandrue/ph-schematron.git</connection>
-    <developerConnection>scm:git:ssh://github.com:alexandrue/ph-schematron.git</developerConnection>
+    <groupId>it.techgap</groupId>
+    <artifactId>ph-sch2xslt-maven-plugin</artifactId>
+    <version>3.0.2</version>
+    <packaging>maven-plugin</packaging>
+    <name>ph-sch2xslt-maven-plugin</name>
+    <description>Maven plugin to convert Schematron files to XSLT files at build time</description>
     <url>https://github.com/alexandrue/ph-schematron/tree/3.0.2-jdk7/ph-sch2xslt-maven-plugin</url>
-  </scm>
 
-  
-  <properties>
-    <maven.version>2.0.9</maven.version>
-  </properties>
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
 
-  <dependencies>
-    <dependency>
-      <groupId>org.apache.maven</groupId>
-      <artifactId>maven-plugin-api</artifactId>
-      <version>${maven.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.maven</groupId>
-      <artifactId>maven-project</artifactId>
-      <version>${maven.version}</version>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.helger</groupId>
-      <artifactId>ph-commons</artifactId>
-    </dependency>  
-    <dependency>
-      <groupId>com.helger</groupId>
-      <artifactId>ph-schematron</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.codehaus.plexus</groupId>
-      <artifactId>plexus-utils</artifactId>
-      <version>2.1</version>
-    </dependency>
-  </dependencies>
+    <developers>
+        <developer>
+            <name>Philip Helger</name>
+            <email>ph(at)helger.com</email>
+            <organization>Philip Helger</organization>
+            <organizationUrl>http://www.helger.com</organizationUrl>
+        </developer>
+        <developer>
+            <name>Alexandru Enasoae</name>
+            <email>a.enasoae(at)tehgapsolutions.com</email>
+            <organization>TechGap Italia</organization>
+            <organizationUrl>http://www.techgap.it</organizationUrl>
+        </developer>
+    </developers>
 
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-plugin-plugin</artifactId>
-        <configuration>
-          <goalPrefix>ph-sch2xslt</goalPrefix>
-        </configuration>
-        <executions>
-          <execution>
-            <id>mojo-descriptor</id>
-            <goals>
-              <goal>descriptor</goal>
-            </goals>
-          </execution>
-          <execution>
-            <id>help-goal</id>
-            <goals>
-              <goal>helpmojo</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-    </plugins>
-  </build>
-  
-  <reporting>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-plugin-plugin</artifactId>
-        <version>3.4</version>
-      </plugin>
-    </plugins>
-  </reporting>
+    <scm>
+        <connection>scm:git:git://github.com/alexandrue/ph-schematron.git</connection>
+        <developerConnection>scm:git:ssh://github.com:alexandrue/ph-schematron.git</developerConnection>
+        <url>https://github.com/alexandrue/ph-schematron/tree/3.0.2-jdk7/ph-sch2xslt-maven-plugin</url>
+    </scm>
+
+
+    <properties>
+        <maven.version>2.0.9</maven.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.maven</groupId>
+            <artifactId>maven-plugin-api</artifactId>
+            <version>${maven.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.maven</groupId>
+            <artifactId>maven-project</artifactId>
+            <version>${maven.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.helger</groupId>
+            <artifactId>ph-commons</artifactId>
+            <version>6.2.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.helger</groupId>
+            <artifactId>ph-schematron</artifactId>
+            <version>3.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.plexus</groupId>
+            <artifactId>plexus-utils</artifactId>
+            <version>2.1</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-plugin-plugin</artifactId>
+                <version>3.4</version>
+                <configuration>
+                    <goalPrefix>ph-sch2xslt</goalPrefix>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>mojo-descriptor</id>
+                        <goals>
+                            <goal>descriptor</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>help-goal</id>
+                        <goals>
+                            <goal>helpmojo</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-plugin-plugin</artifactId>
+                <version>3.4</version>
+            </plugin>
+        </plugins>
+    </reporting>
 </project>
