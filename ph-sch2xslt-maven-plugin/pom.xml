@@ -22,37 +22,44 @@
   <parent>
     <groupId>com.helger</groupId>
     <artifactId>ph-schematron-parent-pom</artifactId>
-    <version>3.0.2-SNAPSHOT</version>
+    <version>3.0.1</version>
   </parent>
-  <groupId>com.helger.maven</groupId>
+  <groupId>it.techgap</groupId>
   <artifactId>ph-sch2xslt-maven-plugin</artifactId>
+  <version>3.0.2</version>
   <packaging>maven-plugin</packaging>
   <name>ph-sch2xslt-maven-plugin</name>
   <description>Maven plugin to convert Schematron files to XSLT files at build time</description>
-  <url>https://github.com/phax/ph-schematron/ph-sch2xslt-maven-plugin</url>
-  <inceptionYear>2014</inceptionYear>
-  
+  <url>https://github.com/alexandrue/ph-schematron/tree/3.0.2-jdk7/ph-sch2xslt-maven-plugin</url>
+
   <licenses>
     <license>
-      <name>Apache 2</name>
-      <url>http://www.apache.org/licenses/LICENSE-2.0</url>
-      <distribution>repo</distribution>
+      <name>The Apache Software License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
     </license>
   </licenses>
 
-  <organization>
-    <name>Philip Helger</name>
-    <url>http://www.helger.com</url>
-  </organization>
-
   <developers>
     <developer>
-      <id>philip</id>
       <name>Philip Helger</name>
       <email>ph(at)helger.com</email>
-      <url>http://www.helger.com</url>
+      <organization>Philip Helger</organization>
+      <organizationUrl>http://www.helger.com</organizationUrl>
+    </developer>
+    <developer>
+      <name>Alexandru Enasoae</name>
+      <email>a.enasoae(at)tehgapsolutions.com</email>
+      <organization>TechGap Italia</organization>
+      <organizationUrl>http://www.techgap.it</organizationUrl>
     </developer>
   </developers>
+
+  <scm>
+    <connection>scm:git:git://github.com/alexandrue/ph-schematron.git</connection>
+    <developerConnection>scm:git:ssh://github.com:alexandrue/ph-schematron.git</developerConnection>
+    <url>https://github.com/alexandrue/ph-schematron/tree/3.0.2-jdk7/ph-sch2xslt-maven-plugin</url>
+  </scm>
+
   
   <properties>
     <maven.version>2.0.9</maven.version>

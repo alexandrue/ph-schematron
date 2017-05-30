@@ -20,6 +20,6 @@
   <!-- Docs: http://findbugs.sourceforge.net/manual/filter.html -->
   <Match>
     <!-- Generated class! -->
-    <Class name="com.helger.maven.sch2xslt.HelpMojo" />
+    <Class name="it.techgap.maven.sch2xslt.HelpMojo" />
   </Match>
 </FindBugsFilter>

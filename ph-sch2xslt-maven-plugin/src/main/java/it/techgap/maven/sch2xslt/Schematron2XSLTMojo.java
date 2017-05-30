@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.helger.maven.sch2xslt;
+package it.techgap.maven.sch2xslt;
 
 import java.io.File;
 import java.util.Locale;
